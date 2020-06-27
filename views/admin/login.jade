@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+    form(action="/admin/login", method="post" )
+        div(class="class=form-group")
+            label(for="username") Username
+            input(required type="text", name="username" class="form-control")
+            label(for="password") Password
+            input(required type="text", name="password" class="form-control")
+            input(type="submit", value="Login" class="btn btn-primary")

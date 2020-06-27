@@ -7,6 +7,8 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const projectRouter = require('./routes/project')
+const adminRouter = require("./routes/admin")
+const blogrouter = require('./routes/blog')
 
 const app = express();
 
@@ -33,6 +35,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use("/project", projectRouter)
+app.use("/admin", adminRouter)
+app.use("/blog", blogrouter)
 
 app.use(function(req, res, next) {
   next(createError(404));

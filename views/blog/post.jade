@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+    form(action="/blog/post", method="post" )
+        div(class="class=form-group")
+            label(for="title") Title
+            input(required type="text", name="title" class="form-control")
+            label(for="description") Description
+            input(required type="text", name="description" class="form-control")
+            label(for="technology") Technology
+            input(required type="text", name="technology" class="form-control")
+            input(type="submit", value="Create project" class="btn btn-primary")
