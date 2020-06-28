@@ -35,13 +35,14 @@ const getMain = (req, res) => {
             let description = post["_fieldsProto"]["description"]["stringValue"]
             let technology = post["_fieldsProto"]["technology"]["stringValue"]
 
+            let descriptionNew = description.substring(0,200)
+
             posts.push(
                 {title: title, 
-                description: description, 
+                description: descriptionNew, 
                 technology: technology,
                 id: id
-                }
-                )
+                })
 
         })
 

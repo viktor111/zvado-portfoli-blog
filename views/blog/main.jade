@@ -3,5 +3,6 @@ extends ../layout
 block content
     each post in posts
         p=post.title
-        p=post.description
+        span!=post.description
+        span ...
         p=post.technology

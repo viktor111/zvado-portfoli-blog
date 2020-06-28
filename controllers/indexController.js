@@ -1,6 +1,6 @@
 const getIndex = (req, res) => {
 
-    res.render('index', { title: 'Express' });
+    res.redirect("/static/index.html");
 }
 
 module.exports = {
