@@ -32,12 +32,13 @@ const getDetails = (req, res) => {
         let title = post["_fieldsProto"]["title"]["stringValue"]
         let description = post["_fieldsProto"]["description"]["stringValue"]
         let technology = post["_fieldsProto"]["technology"]["stringValue"]
-
+       
         let postData = {
             title: title, 
             description: description, 
             technology: technology,
-            id: id   
+            id: id,
+            title: title
         }
         res.render("blog/detail", postData)
    })
@@ -69,7 +70,7 @@ const getMain = (req, res) => {
 
         })
 
-        res.render("blog/main", {posts: posts})
+        res.render("blog/main", {posts: posts, title: "Blog"})
     })
     .catch(err => {
         console.log(err)

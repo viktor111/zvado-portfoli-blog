@@ -2,8 +2,14 @@ extends ../layout
 
 block content
     each post in posts
-        h1=post.title
-        span!=post.description
-        a(href="/blog/details/#{post.id}") ...
-        p=post.technology
+        div(class="jumbotron text-center shadow ")
+            div(class="row")
+                div(class="title col-lg-12 col-md-12 col-sm-12")
+                    a(href="/blog/details/#{post.id}"   )
+                        h1=post.title
+                div(class="col-lg-12 col-md-12 col-sm-12")
+                    span!=post.description
+                    a(href="/blog/details/#{post.id}") ...
+                div(class="col-lg-12 col-md-12 col-sm-12")
+                    p=post.technology
         
