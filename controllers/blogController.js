@@ -20,6 +20,29 @@ const getCreate = (req, res) => {
 
 }
 
+const getDetails = (req, res) => {
+    const id = req.params.id;
+    const postsContext = new DbContext().Initialize("posts");
+
+   let querry = postsContext
+   .doc(id)
+   .get()
+   .then((post) => {
+        let id = post.id;
+        let title = post["_fieldsProto"]["title"]["stringValue"]
+        let description = post["_fieldsProto"]["description"]["stringValue"]
+        let technology = post["_fieldsProto"]["technology"]["stringValue"]
+
+        let postData = {
+            title: title, 
+            description: description, 
+            technology: technology,
+            id: id   
+        }
+        res.render("blog/detail", postData)
+   })
+}
+
 const getMain = (req, res) => {
     const postsContext = new DbContext().Initialize("posts");
 
@@ -72,5 +95,6 @@ const postCreate =(req, res) => {
 module.exports = {
     postCreate,
     getMain,
-    getCreate
+    getCreate,
+    getDetails
 }

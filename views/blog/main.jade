@@ -2,7 +2,8 @@ extends ../layout
 
 block content
     each post in posts
-        p=post.title
+        h1=post.title
         span!=post.description
-        span ...
+        a(href="/blog/details/#{post.id}") ...
         p=post.technology
+        
