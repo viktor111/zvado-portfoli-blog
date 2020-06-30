@@ -38,6 +38,10 @@ app.use("/project", projectRouter)
 app.use("/admin", adminRouter)
 app.use("/blog", blogrouter)
 
+app.get("/cv", (req, res) => {
+  res.download("CV-2.pdf")
+})
+
 app.use(function(req, res, next) {
   next(createError(404));
 });
