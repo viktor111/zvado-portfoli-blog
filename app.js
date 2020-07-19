@@ -13,7 +13,7 @@ const blogrouter = require('./routes/blog')
 const app = express();
 
 const FirebaseAuthSDK = require("./firebase/authAdminSDK")
-const serviceAccount = require("./firebase/node-portfolio-17f89-firebase-adminsdk-z04qy-e120b52b23.json")
+const serviceAccount = require("./firebase/node-portfolio-17f89-firebase-adminsdk-z04qy-6abc5b8eda.json")
 
 const firebaseAuth = new FirebaseAuthSDK(serviceAccount);
 firebaseAuth.connect();
